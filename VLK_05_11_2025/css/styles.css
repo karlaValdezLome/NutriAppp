@@ -137,42 +137,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-.card-agua,
-.card-calorias,
-.card-imc {
-    border-left: 5px solid var(--secondary) !important;
-    transition: all 0.3s ease;
-}
-
-.card-agua:hover,
-.card-calorias:hover,
-.card-imc:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
 .titulo-funcion {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     font-size: 1.3rem;
     color: var(--dark);
     margin-bottom: 15px;
-}
-
-.nueva-fila {
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-.card-misma-altura {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-misma-altura .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
