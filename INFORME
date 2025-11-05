@@ -1,0 +1,124 @@
+# **Análisis de Mercado y Desarrollo de Aplicación Nutricional - NutriApp**
+
+## **Introducción**
+
+El presente análisis tiene como objetivo investigar el mercado actual de aplicaciones nutricionales, con especial enfoque en **Fitia** como referencia principal, junto con otras aplicaciones competidoras. La investigación busca identificar funcionalidades clave, modelos de negocio exitosos y oportunidades de mejora para el desarrollo de **NutriApp**, nuestra aplicación nutricional en desarrollo.
+
+## **Análisis de Aplicaciones Competidoras**
+
+### **Fitia - Aplicación de Referencia**
+
+**Funcionalidades Principales:**
+- Calculadora de requerimientos calóricos personalizados
+- Seguimiento de macronutrientes y micronutrientes
+- Planificación de comidas según objetivos específicos
+- Base de datos de alimentos con información nutricional detallada
+- Registro de progreso y métricas corporales
+
+**Experiencia de Usuario:**
+- Interfaz minimalista y orientada a resultados
+- Enfoque en datos científicos y precisión nutricional
+- Navegación intuitiva con flujos bien definidos
+- Personalización basada en objetivos individuales
+
+**Modelo de Negocio:**
+- Versión gratuita con funcionalidades básicas
+- Suscripción premium para características avanzadas
+- Sin publicidad intrusiva en la versión gratuita
+
+**Puntos Fuertes:**
+- Precisión en cálculos nutricionales
+- Enfoque científico y basado en evidencia
+- Personalización avanzada según metas específicas
+- Interfaz limpia y profesional
+
+**Puntos Débiles:**
+- Curva de aprendizaje para usuarios novatos
+- Limitaciones en la versión gratuita
+- Base de datos menos extensa que competidores establecidos
+
+### **Otras Aplicaciones Analizadas**
+
+**MyFitnessPal:**
+- Enfoque en base de datos masiva y escaneo de códigos de barras
+- Modelo freemium con funciones premium tras pago
+- Fortaleza: Comunidad grande y base de datos extensa
+- Debilidad: Interfaz saturada en versión gratuita
+
+**FatSecret:**
+- Completamente gratuita con publicidad no intrusiva
+- Comunidad activa y funcionalidades sociales
+- Fortaleza: Accesibilidad y costo cero
+- Debilidad: Funcionalidades limitadas para usuarios avanzados
+
+**Lose It!:**
+- Enfoque en pérdida de peso con gamificación
+- Planes premium con coaching personalizado
+- Fortaleza: Enfoque motivacional y engagement
+- Debilidad: Menos precisión en datos nutricionales
+
+## **Tabla Comparativa de Aplicaciones**
+
+| **Característica**       | **Fitia**               | **MyFitnessPal**       | **FatSecret**          | **Lose It!**           |
+|--------------------------|-------------------------|------------------------|------------------------|------------------------|
+| **Precisión Nutricional** | Excelente              | Buena                  | Regular                | Regular                |
+| **Interfaz de Usuario**  | Minimalista/Científica | Saturada               | Simple                 | Motivacional           |
+| **Costo**                | Freemium               | Freemium               | Gratuita               | Freemium               |
+| **Base de Datos**        | Limitada pero precisa  | Extensísima            | Extensa                | Moderada               |
+| **Personalización**      | Avanzada               | Básica                 | Básica                 | Intermedia             |
+| **Enfoque Principal**    | Científico             | Comunidad              | Accesibilidad          | Motivación             |
+
+## **Oportunidades Identificadas para NutriApp**
+
+### **Vacíos en el Mercado:**
+1. **Enfoque educativo**: Falta de aplicaciones que eduquen mientras guían
+2. **Adaptación cultural**: Pocas apps adaptadas a hábitos alimenticios mexicanos/latinos
+3. **Integración local**: Base de datos con productos y marcas locales
+4. **Enfoque progresivo**: Desde nivel básico hasta avanzado en una sola app
+
+### **Fortalezas a Desarrollar:**
+- Combinar la precisión de Fitia con la accesibilidad de FatSecret
+- Interfaz intuitiva que eduque progresivamente
+- Enfoque en alimentos y recetas locales
+- Sistema de seguimiento que muestre progreso tangible
+
+## **Propuesta de Valor de NutriApp**
+
+### **Características Diferenciadoras:**
+1. **Sistema Educativo Integrado**: Tutoriales y explicaciones sobre nutrición
+2. **Adaptación Cultural**: Alimentos y recetas familiares para el usuario mexicano
+3. **Progresión Inteligente**: Desde conteo básico de calorías hasta control avanzado de macros
+4. **Comunidad Local**: Grupos de apoyo y recetas compartidas por usuarios
+5. **Planificación Económica**: Opciones de alimentación saludable con presupuesto limitado
+
+### **Modelo de Negocio Propuesto:**
+- **Versión Gratuita**: Funcionalidades esenciales sin límites de uso
+- **Versión Premium**: Planificación avanzada, recetas exclusivas y análisis detallados
+- **Sin publicidad intrusiva**, monetización mediante valor agregado
+
+## **Conclusiones y Recomendaciones**
+
+### **Hallazgos Principales:**
+1. **Los usuarios valoran más la precisión que la cantidad de funciones**
+2. **La simplicidad en la interfaz es crucial para la retención de usuarios**
+3. **El contexto cultural y alimenticio local es un diferenciador importante**
+4. **La educación nutricional incrementa la adherencia a largo plazo**
+
+### **Recomendaciones para el Desarrollo:**
+1. **Priorizar precisión sobre cantidad** en la base de datos inicial
+2. **Diseñar una curva de aprendizaje suave** para nuevos usuarios
+3. **Incorporar elementos educativos** en cada funcionalidad
+4. **Focus en experiencia móvil first** con navegación intuitiva
+5. **Desarrollar contenido específico para el mercado mexicano**
+
+### **Próximos Pasos:**
+- Desarrollo de MVP con funciones core basadas en Fitia
+- Pruebas de usabilidad con usuarios objetivo
+- Expansión gradual de base de datos con alimentos locales
+- Implementación de sistema educativo progresivo
+
+## **Resumen Ejecutivo**
+
+**NutriApp se posicionará como una aplicación que combina la precisión científica de Fitia con la accesibilidad y adaptación cultural que el mercado mexicano necesita.** Nuestro enfoque en educación nutricional progresiva y adaptación a hábitos alimenticios locales nos diferenciará de competidores globales. El modelo de negocio freemium permitirá acceso universal mientras se monetiza mediante valor agregado genuino, priorizando siempre la experiencia del usuario y resultados tangibles en su journey nutricional.
+
+La estrategia de desarrollo seguirá un approach mobile-first con especial atención a la usabilidad, buscando convertir a NutriApp en la aplicación de referencia para usuarios mexicanos que buscan mejorar su salud nutricional mediante herramientas precisas, educativas y culturalmente relevantes.
