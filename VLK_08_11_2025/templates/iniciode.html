@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar secion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="/VLK_08_11_2025/static/css/styles.css"> 
+</head>
+<body>
+  <div class="fondo_registro row justify-content-center align-items-center min-vh-100">
+    <div class="container-fluid bg-dark col-lg-7 p-4 registro-box">
+      <h1 class="text-warning fw-bold nutriapp-title text-end"><i class="bi bi-heart-pulse"></i> NutriApp</h1>
+      <h2 class="fw-bold p-3 text-light">Iniciar Sesion</h2>
+      <form action="pru.html" method="post">
+        <div class="mb-4">
+          <label for="username" class="form-label text-light">Nombre de Usuario</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="form-label text-light">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label text-light">Contraseña</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="btn-group-custom mt-4">
+            <a href="index.html" class="btn btn-outline-light btn-lg">volver</a>
+            <a href="registro.html" class="btn btn-outline-light btn-lg">Registrarse</a>
+          <button type="button" class="btn btn-warning btn-lg p-2 w-50 text-dark">Continuar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+

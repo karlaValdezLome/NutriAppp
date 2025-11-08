@@ -9,6 +9,16 @@
     --text-dark: #818479;
 }
 
+.fondo_registro {
+    background-image: url(/VLK_08_11_2025/static/img/tomate_azul_fondo.png.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
 .moderno {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 300;

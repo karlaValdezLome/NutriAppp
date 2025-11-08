@@ -1,5 +1,5 @@
 # NutriAppp
-Nombres de los integrantes del equipo: Karla Valdez Lome, Joahana martines romero
+Nombres de los integrantes del equipo: Karla Valdez Lome, Joahana Martinez Momero
 Grupo: 3-D
 
 ## Actividad
