@@ -6,10 +6,10 @@
 
     <title>{% block title %}NutriApp{% endblock %}</title>
 
- 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/VLK_08_11_2025/static/css/styles.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<img src="{{ url_for('static', filename='img/comesano - copia.png') }}">
+<a href="{{ url_for('inicio_de_sesion') }}">
+
  
 </head>
 
@@ -25,6 +25,31 @@
         </div>
     </header>
 
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{% block title %}Menu{% endblock %}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">calculadora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">acerca de</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     {% block body %}
 

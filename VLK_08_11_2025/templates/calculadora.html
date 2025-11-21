@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Nutricional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/NutriAppp/VLK_08_11_2025/static/css/styles.css">
+</head>
+
+<body>
+    <header class="bg-dark text-light py-3 shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-warning fw-bold m-0"><i class="bi bi-heart-pulse"></i> NutriApp</h1>
+            <nav class="d-flex flex-wrap align-items-center">
+                <a href="{{ url_for('index') }}" class="text-light px-3 text-decoration-none">Home</a>
+                    <span class="text-light px-3">Hola, {{ session.user }}</span>
+                    <a href="{{ url_for('inicio_de_sesion') }}" class="btn btn-warning ms-3">Iniciar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ url_for('index') }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ url_for('inicio_de_sesion') }}">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light active" href="{{ url_for('calculadora') }}">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ url_for('education') }}">Educación</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container p-2">
+        <div class="card">
+            <div class="card-body text-center shadow-sm border-0">
+                Módulo de herramientas
+            </div>
+        </div>
+
+        <div class="row g-4">
+          
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="me-4" style="min-width:140px;">
+                            <div class="p-3 border rounded text-center">
+                                <h4 class="m-0">IMC</h4>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <form method="POST">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Peso (kg)</label>
+                                        <input name="imc_peso" type="number" class="form-control" min="0" step="0.1" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">Altura (cm)</label>
+                                        <input name="imc_altura" type="number" class="form-control" min="0" step="0.1" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Edad (opcional)</label>
+                                        <input name="imc_edad" type="number" class="form-control" min="0">
+                                    </div>
+                                    <div class="col-md-2 text-end">
+                                        <label class="form-label d-block">&nbsp;</label>
+                                        <button type="submit" name="calcular_imc" class="btn btn-secondary w-100">CALCULAR</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            {% if resultados.imc %}
+                            <div class="mt-3">
+                                <div class="alert alert-info p-2 mb-0">
+                                    <strong>IMC:</strong> {{ resultados.imc.valor }} — {{ resultados.imc.clasificacion }}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="me-4" style="min-width:140px;">
+                            <div class="p-3 border rounded text-center">
+                                <h4 class="m-0">TMB</h4>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <form method="POST">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Sexo</label>
+                                        <select name="tmb_sexo" class="form-select">
+                                            <option value="female">Femenino</option>
+                                            <option value="male">Masculino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">Peso (kg)</label>
+                                        <input name="tmb_peso" type="number" class="form-control" min="0" step="0.1" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">Altura (cm)</label>
+                                        <input name="tmb_altura" type="number" class="form-control" min="0" step="0.1" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label">Edad</label>
+                                        <input name="tmb_edad" type="number" class="form-control" min="0" required>
+                                    </div>
+                                    <div class="col-md-1 text-end">
+                                        <label class="form-label d-block">&nbsp;</label>
+                                        <button type="submit" name="calcular_tmb" class="btn btn-secondary w-100">CALCULAR</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            {% if resultados.tmb %}
+                            <div class="mt-3">
+                                <div class="alert alert-info p-2 mb-0">
+                                    <strong>TMB:</strong> {{ resultados.tmb }} kcal/día
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="me-4" style="min-width:140px;">
+                            <div class="p-3 border rounded text-center">
+                                <h4 class="m-0">GCT</h4>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <form method="POST">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Actividad</label>
+                                        <select name="gct_actividad" class="form-select">
+                                            <option value="1.2">Sedentario (poco o no ejercicio)</option>
+                                            <option value="1.375">Ligero (1–3 días/sem)</option>
+                                            <option value="1.55">Moderado (3–5 días/sem)</option>
+                                            <option value="1.725">Activo (6–7 días/sem)</option>
+                                            <option value="1.9">Muy activo (trabajo físico)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">TMB (kcal)</label>
+                                        <div class="input-group">
+                                            <a href="{{ url_for('usar_tmb') }}" class="btn btn-outline-secondary">Usar TMB</a>
+                                            <input name="gct_manual" type="number" class="form-control" 
+                                                   value="{{ request.args.get('tmb_manual', '') }}"
+                                                   placeholder="TMB manual" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Nota</label>
+                                        <div class="form-text">GCT = TMB × factor de actividad</div>
+                                    </div>
+                                    <div class="col-md-2 text-end">
+                                        <label class="form-label d-block">&nbsp;</label>
+                                        <button type="submit" name="calcular_gct" class="btn btn-secondary w-100">CALCULAR</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            {% if resultados.gct %}
+                            <div class="mt-3">
+                                <div class="alert alert-info p-2 mb-0">
+                                    <strong>GCT:</strong> {{ resultados.gct }} kcal/día
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+ 
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
