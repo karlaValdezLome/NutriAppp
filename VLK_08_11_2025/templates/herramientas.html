@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras - NutriApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/NutriAppp/VLK_08_11_2025/static/css/styles.css">
+</head>
+
+<body class="bg-light">
+    <header class="bg-dark text-light py-3 shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-warning fw-bold m-0"><i class="bi bi-heart-pulse"></i> NutriApp</h1>
+            <nav class="d-flex flex-wrap align-items-center">
+                <a href="acerca.html" class="text-light px-3 text-decoration-none">Acerca de</a>
+                <a href="registro.html" class="text-light px-3 text-decoration-none">Servicios</a>
+                <a href="index.html" class="text-light px-3 text-decoration-none">home</a>
+                <a href="iniciode.html" class="btn btn-warning ms-3">Iniciar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+<div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-md-3 col-lg-2 p-0 bg-dark text-light">
+                <div class="p-3 bg-dark border-bottom border-secondary">
+                    <h5 class="text-warning mb-0"><i class="bi bi-list"></i> Menú Principal</h5>
+                </div>
+                <nav class="nav flex-column mt-3">
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="index.html">
+                        <i class="bi bi-house-fill me-2"></i> Inicio
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="login.html">
+                        <i class="bi bi-people-fill me-2"></i> Usuarios
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary active" href="educacion.html">
+                        <i class="bi bi-basket-fill me-2"></i> Artículos Educativos
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="recetas.html">
+                        <i class="bi bi-graph-up me-2"></i> Banco de Recetas Saludables
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="herramientas.html">
+                        <i class="bi bi-calculator me-2"></i> Módulo de Herramientas
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="ejercisios.html">
+                        <i class="bi bi-person-arms-up me-2"></i> Ejercicios básicos
+                    </a>
+                </nav>
+            </div>
+
+            <div id="content" class="col-md-9 col-lg-10 p-4 ms-auto">
+                <button class="btn btn-primary mb-4 d-md-none" type="button">
+                    <i class="bi bi-list"></i> Menú
+                </button>
+
+            <main class="flex-grow-1">
+
+                <div class="calculator-section">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h1 class="display-5 fw-bold text-dark mb-3">
+                                    <i class="bi bi-calculator text-warning"></i> Calculadoras Nutricionales
+                                </h1>
+                                <p class="lead mb-4 text-dark">Herramientas profesionales para calcular y analizar tu
+                                    estado
+                                    nutricional de forma precisa.</p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="feature-badge"><i class="bi bi-speedometer2 me-1"></i>IMC</span>
+                                    <span class="feature-badge"><i class="bi bi-fire me-1"></i>TMB</span>
+                                    <span class="feature-badge"><i class="bi bi-activity me-1"></i>GCT</span>
+                                    <span class="feature-badge"><i class="bi bi-pie-chart me-1"></i>Macros</span>
+                                    <span class="feature-badge"><i class="bi bi-search me-1"></i>Recetas</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <img src="{{ url_for('static', filename='img/calculadora-hero.png') }}"
+                                    alt="Calculadoras" class="img-fluid" style="max-height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6">
+                            <div class="calculator-card">
+                                <div class="card-header-custom">
+                                    <h5 class="mb-0"><i class="bi bi-speedometer2 me-2"></i>Calculadora de IMC</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted mb-3">Calcula tu Índice de Masa Corporal para conocer tu estado
+                                        nutricional.</p>
+                                    <form method="POST" action="{{ url_for('calculadora') }}">
+                                        <input type="hidden" name="calcular_imc" value="true">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="imc_peso" placeholder="Peso (kg)" step="0.1" required
+                                                    value="{{ datos_usuario.peso if datos_usuario else '' }}">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="imc_altura" placeholder="Altura (cm)" required
+                                                    value="{{ datos_usuario.altura if datos_usuario else '' }}">
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-calculator w-100">
+                                                    <i class="bi bi-calculator me-2"></i>Calcular IMC
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    {% if resultados.imc %}
+                                    <div class="result-card mt-3">
+                                        <h6 class="mb-2"><i class="bi bi-graph-up me-2"></i>Resultado IMC</h6>
+                                        <p class="mb-1"><strong>Valor:</strong> {{ resultados.imc.valor }}</p>
+                                        <p class="mb-0"><strong>Clasificación:</strong> {{ resultados.imc.clasificacion
+                                            }}</p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="{{ url_for('static', filename='img/imc-calc.jpg') }}" class="nutrition-image"
+                                alt="IMC Saludable">
+                        </div>
+                    </div>
+
+
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="calculator-card">
+                                <div class="card-header-custom">
+                                    <h5 class="mb-0"><i class="bi bi-fire me-2"></i>Calculadora de TMB</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted mb-3">Calcula las calorías que tu cuerpo quema en reposo.</p>
+                                    <form method="POST" action="{{ url_for('calculadora') }}">
+                                        <input type="hidden" name="calcular_tmb" value="true">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <select class="form-select form-control-custom" name="tmb_sexo"
+                                                    required>
+                                                    <option value="" disabled selected>Género</option>
+                                                    <option value="male">Hombre</option>
+                                                    <option value="female">Mujer</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="tmb_edad" placeholder="Edad" required
+                                                    value="{{ datos_usuario.edad if datos_usuario else '' }}">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="tmb_peso" placeholder="Peso (kg)" step="0.1" required
+                                                    value="{{ datos_usuario.peso if datos_usuario else '' }}">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="tmb_altura" placeholder="Altura (cm)" required
+                                                    value="{{ datos_usuario.altura if datos_usuario else '' }}">
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-calculator w-100">
+                                                    <i class="bi bi-calculator me-2"></i>Calcular TMB
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    {% if resultados.tmb %}
+                                    <div class="result-card mt-3">
+                                        <h6 class="mb-2"><i class="bi bi-activity me-2"></i>Tu Tasa Metabólica Basal
+                                        </h6>
+                                        <p class="mb-0 display-6">{{ resultados.tmb }} <small>calorías/día</small></p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <img src="{{ url_for('static', filename='img/tmb-calc.jpg') }}" class="nutrition-image"
+                                alt="Metabolismo">
+                        </div>
+                    </div>
+
+
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6">
+                            <div class="calculator-card">
+                                <div class="card-header-custom">
+                                    <h5 class="mb-0"><i class="bi bi-activity me-2"></i>Calculadora de GCT</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted mb-3">Calcula el total de calorías que quemas con tu actividad
+                                        física.
+                                    </p>
+                                    <form method="POST" action="{{ url_for('calculadora') }}">
+                                        <input type="hidden" name="calcular_gct" value="true">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="gct_manual" placeholder="Tu TMB" step="0.1" required
+                                                    id="tmb-input">
+                                            </div>
+                                            <div class="col-12">
+                                                <select class="form-select form-control-custom" name="gct_actividad"
+                                                    required>
+                                                    <option value="" disabled selected>Nivel de Actividad</option>
+                                                    <option value="1.2">Sedentario (poco ejercicio)</option>
+                                                    <option value="1.375">Ligero (1-3 días/semana)</option>
+                                                    <option value="1.55">Moderado (3-5 días/semana)</option>
+                                                    <option value="1.725">Activo (6-7 días/semana)</option>
+                                                    <option value="1.9">Atleta (ejercicio intenso)</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-calculator w-100">
+                                                    <i class="bi bi-calculator me-2"></i>Calcular GCT
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    {% if resultados.gct %}
+                                    <div class="result-card mt-3">
+                                        <h6 class="mb-2"><i class="bi bi-lightning me-2"></i>Tu Gasto Calórico Total
+                                        </h6>
+                                        <p class="mb-0 display-6">{{ resultados.gct }} <small>calorías/día</small></p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="{{ url_for('static', filename='img/gct-calc.jpg') }}" class="nutrition-image"
+                                alt="Actividad Física">
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="calculator-card">
+                                <div class="card-header-custom">
+                                    <h5 class="mb-0"><i class="bi bi-pie-chart me-2"></i>Calculadora de Macronutrientes
+                                    </h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted mb-3">Distribuye tus calorías en proteínas, carbohidratos y
+                                        grasas.</p>
+                                    <form method="POST" action="{{ url_for('calculadora') }}">
+                                        <input type="hidden" name="calcular_macros" value="true">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="macro_kcal" placeholder="Calorías diarias" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="macro_prot" placeholder="% Proteínas" value="25" min="10"
+                                                    max="50" step="1">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control form-control-custom"
+                                                    name="macro_carbs" placeholder="% Carbohidratos" value="50" min="20"
+                                                    max="70" step="1">
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-calculator w-100">
+                                                    <i class="bi bi-calculator me-2"></i>Calcular Macros
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    {% if resultados.macros %}
+                                    <div class="result-card mt-3">
+                                        <h6 class="mb-3 text-center">Distribución de Macronutrientes</h6>
+                                        <div class="row text-center">
+                                            <div class="col-4 border-end">
+                                                <strong class="text-success">Proteínas</strong><br>
+                                                <span class="h5">{{ resultados.macros.prot_g }}g</span><br>
+                                                <small>{{ resultados.macros.prot_pct }}%</small>
+                                            </div>
+                                            <div class="col-4 border-end">
+                                                <strong class="text-warning">Carbohidratos</strong><br>
+                                                <span class="h5">{{ resultados.macros.carbs_g }}g</span><br>
+                                                <small>{{ resultados.macros.carbs_pct }}%</small>
+                                            </div>
+                                            <div class="col-4">
+                                                <strong class="text-danger">Grasas</strong><br>
+                                                <span class="h5">{{ resultados.macros.fat_g }}g</span><br>
+                                                <small>{{ resultados.macros.fat_pct }}%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <img src="{{ url_for('static', filename='img/macros-calc.jpg') }}" class="nutrition-image"
+                                alt="Macronutrientes">
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="calculator-card">
+                                <div class="card-header-custom text-center">
+                                    <h5 class="mb-0"><i class="bi bi-search me-2"></i>Analizador de Recetas y Alimentos
+                                    </h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="section-title">Analizar Receta</h6>
+                                            <form method="POST" action="{{ url_for('calculadora') }}">
+                                                <input type="hidden" name="calcular_receta" value="true">
+                                                <div id="ingredientes-container">
+                                                    <div class="ingrediente-item mb-3">
+                                                        <div class="row g-2">
+                                                            <div class="col-4">
+                                                                <input type="number"
+                                                                    class="form-control form-control-custom"
+                                                                    name="receta_calorias_0" placeholder="Calorías"
+                                                                    step="0.1">
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <input type="number"
+                                                                    class="form-control form-control-custom"
+                                                                    name="receta_proteinas_0"
+                                                                    placeholder="Proteínas (g)" step="0.1">
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <input type="number"
+                                                                    class="form-control form-control-custom"
+                                                                    name="receta_grasas_0" placeholder="Grasas (g)"
+                                                                    step="0.1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-outline-secondary btn-sm mb-3"
+                                                    onclick="agregarIngrediente()">
+                                                    <i class="bi bi-plus-circle me-1"></i>Agregar Ingrediente
+                                                </button>
+                                                <button type="submit" class="btn btn-calculator w-100">
+                                                    <i class="bi bi-calculator me-2"></i>Calcular Receta
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="section-title">Buscar Alimentos</h6>
+                                            <form method="POST" action="{{ url_for('buscar_alimento') }}">
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control form-control-custom"
+                                                        name="comida" placeholder="Ej: manzana, pollo, arroz..."
+                                                        required>
+                                                </div>
+                                                <button type="submit" class="btn btn-calculator w-100">
+                                                    <i class="bi bi-search me-2"></i>Buscar Alimento
+                                                </button>
+                                            </form>
+                                            {% if resultados.receta %}
+                                            <div class="result-card mt-3">
+                                                <h6 class="mb-2">Valor Nutricional Total</h6>
+                                                <p class="mb-1"><strong>Calorías:</strong> {{ resultados.receta.calorias
+                                                    }}</p>
+                                                <p class="mb-1"><strong>Proteínas:</strong> {{
+                                                    resultados.receta.proteinas }}g
+                                                </p>
+                                                <p class="mb-1"><strong>Grasas:</strong> {{ resultados.receta.grasas }}g
+                                                </p>
+                                                <p class="mb-0"><strong>Carbohidratos:</strong> {{
+                                                    resultados.receta.carbohidratos }}g</p>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="section-title text-center mb-4">Información sobre Macronutrientes</h3>
+                    <p class="text-center text-muted mb-4">Conoce más sobre cada macronutriente y su importancia en tu
+                        alimentación</p>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="calculator-card h-100">
+                        <div class="card-header-custom text-center">
+                            <i class="bi bi-droplet-fill me-2"></i>Proteínas
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-egg-fried text-success" style="font-size: 2rem;"></i>
+                            </div>
+                            <h5 class="card-title text-success">Proteínas</h5>
+                            <p class="card-text text-muted mb-3">
+                                Esenciales para construir y reparar tejidos, producir enzimas y hormonas.
+                                Son los bloques de construcción de tu cuerpo.
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-success me-2">Musculatura</span>
+                                <span class="badge bg-success">Reparación</span>
+                            </div>
+                            <ul class="list-unstyled text-start small mb-3">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Construye masa
+                                    muscular
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Repara tejidos</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Produce enzimas
+                                </li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Fortalece sistema inmune</li>
+                            </ul>
+                            <a href="https://medlineplus.gov/spanish/ency/article/002467.htm" target="_blank"
+                                class="btn btn-success btn-sm w-100">
+                                <i class="bi bi-info-circle me-2"></i>Más información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="calculator-card h-100">
+                        <div class="card-header-custom text-center">
+                            <i class="bi bi-lightning-charge-fill me-2"></i>Carbohidratos
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-bread-slice text-warning" style="font-size: 2rem;"></i>
+                            </div>
+                            <h5 class="card-title text-warning">Carbohidratos</h5>
+                            <p class="card-text text-muted mb-3">
+                                Principal fuente de energía del cuerpo. Proporcionan combustible para el cerebro
+                                y actividades físicas.
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-2">Energía</span>
+                                <span class="badge bg-warning">Combustible</span>
+                            </div>
+                            <ul class="list-unstyled text-start small mb-3">
+                                <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Energía inmediata
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Combustible
+                                    cerebral</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Fibra digestiva
+                                </li>
+                                <li><i class="bi bi-check-circle text-warning me-2"></i>Reserva energética</li>
+                            </ul>
+                            <a href="https://medlineplus.gov/spanish/ency/article/002469.htm" target="_blank"
+                                class="btn btn-warning btn-sm w-100">
+                                <i class="bi bi-info-circle me-2"></i>Más información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="calculator-card h-100">
+                        <div class="card-header-custom text-center">
+                            <i class="bi bi-droplet me-2"></i>Grasas
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-droplet text-danger" style="font-size: 2rem;"></i>
+                            </div>
+                            <h5 class="card-title text-danger">Grasas Saludables</h5>
+                            <p class="card-text text-muted mb-3">
+                                Necesarias para absorber vitaminas, proteger órganos y mantener
+                                la temperatura corporal. Fuente de energía concentrada.
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-danger me-2">Absorción</span>
+                                <span class="badge bg-danger">Protección</span>
+                            </div>
+                            <ul class="list-unstyled text-start small mb-3">
+                                <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i>Absorción de
+                                    vitaminas</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i>Protección de
+                                    órganos</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i>Energía de reserva
+                                </li>
+                                <li><i class="bi bi-check-circle text-danger me-2"></i>Salud hormonal</li>
+                            </ul>
+                            <a href="https://medlineplus.gov/spanish/ency/article/002468.htm" target="_blank"
+                                class="btn btn-danger btn-sm w-100">
+                                <i class="bi bi-info-circle me-2"></i>Más información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h4 class="section-title text-center mb-4">Fuentes Alimenticias Saludables</h4>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h6 class="text-success mb-3"><i class="bi bi-egg-fried me-2"></i>Fuentes de Proteína</h6>
+                            <div class="row small">
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Pechuga de pollo
+                                        </li>
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Salmón</li>
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Huevos</li>
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Yogur griego</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Lentejas</li>
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Quinoa</li>
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Almendras</li>
+                                        <li class="mb-1"><i class="bi bi-check text-success me-1"></i>Tofu</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h6 class="text-warning mb-3"><i class="bi bi-basket me-2"></i>Fuentes de Carbohidratos</h6>
+                            <div class="row small">
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Avena</li>
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Camote</li>
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Quinoa</li>
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Plátano</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Arroz integral
+                                        </li>
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Manzana</li>
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Pasta integral
+                                        </li>
+                                        <li class="mb-1"><i class="bi bi-check text-warning me-1"></i>Zanahoria</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h6 class="text-danger mb-3"><i class="bi bi-tree me-2"></i>Fuentes de Grasas Saludables
+                            </h6>
+                            <div class="row small">
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Aguacate</li>
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Nueces</li>
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Aceite de oliva
+                                        </li>
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Salmón</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Semillas de chía
+                                        </li>
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Aceitunas</li>
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Almendras</li>
+                                        <li class="mb-1"><i class="bi bi-check text-danger me-1"></i>Coco</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="calculator-card">
+                        <div class="card-header-custom text-center">
+                            <i class="bi bi-lightbulb me-2"></i>Consejos para una Alimentación Balanceada
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-3 mb-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-2"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="bi bi-cup-straw text-success"></i>
+                                    </div>
+                                    <h6>Hidratación</h6>
+                                    <p class="small text-muted">Toma 2 litros de agua al día</p>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-2"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="bi bi-clock text-warning"></i>
+                                    </div>
+                                    <h6>Horarios</h6>
+                                    <p class="small text-muted">Come cada 3-4 horas</p>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-2"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="bi bi-rainbow text-danger"></i>
+                                    </div>
+                                    <h6>Variedad</h6>
+                                    <p class="small text-muted">Incluye alimentos de todos los colores</p>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-2"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="bi bi-scale text-primary"></i>
+                                    </div>
+                                    <h6>Proporciones</h6>
+                                    <p class="small text-muted">Balancea tus macronutrientes</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="https://www.who.int/es/news-room/fact-sheets/detail/healthy-diet"
+                                    target="_blank" class="btn btn-outline-secondary btn-sm">
+                                    <i class="bi bi-globe me-2"></i>Guía de Alimentación Saludable - OMS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-warning">NutriApp</h5>
+                    <p>Tu compañero de salud y bienestar.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="acerca.html" class="text-light text-decoration-none">Acerca de</a></li>
+                        <li><a href="https://youtu.be/AGM8BMqBcTo?si=z2L7ODLz3AuIJdIL"
+                                class="text-light text-decoration-none">Karla Valdez lome 3-D</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"
+                                style="font-size: 1.5rem;"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter" style="font-size: 1.5rem;"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="m-0">© 2023 NutriApp. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

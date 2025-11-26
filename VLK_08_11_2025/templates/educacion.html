@@ -1,94 +1,733 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es-mx">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modulo de educacion e informacion</title>
+    <title>Artículos Educativos - NutriApp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/NutriAppp/VLK_08_11_2025/static/css/styles.css">
 </head>
 
-<body>
+<body class="bg-light">
     <header class="bg-dark text-light py-3 shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="text-warning fw-bold m-0"><i class="bi bi-heart-pulse"></i> NutriApp</h1>
             <nav class="d-flex flex-wrap align-items-center">
-                <a href="index.html" class="text-light px-3 text-decoration-none">Home</a>
+                <a href="acerca.html" class="text-light px-3 text-decoration-none">Acerca de</a>
+                <a href="calculadora.html" class="text-light px-3 text-decoration-none">Funciones</a>
+                <a href="index.html" class="text-light px-3 text-decoration-none active">home</a>
                 <a href="iniciode.html" class="btn btn-warning ms-3">Iniciar Sesión</a>
             </nav>
         </div>
     </header>
 
-
-
-    <div class="bg-primary">
-        <div class="container-fluid col-lg-7 registro-box bg-primary p-3">
-            <div class="p-2 container card shadow-sm">
-                <h3 class="p-2 text-center card bg-dark text-warning">Artiulos educativos</h3>
-
-                <h4 class="p-1 text-center card bg-light text-warning">¿Cómo leer las etiquetas nutricionales?</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus, temporibus ipsum saepe animi similique perferendis corrupti earum dignissimos maiores quis laborum quo mollitia quibusdam. Alias atque reprehenderit voluptatem distinctio!
-                </p>
-                <h4 class="p-1 text-center card bg-light text-warning">Mitos y verdades sobre las dietas de moda.</h4>
-                <p></p>
-                <h4 class="p-1 text-center card bg-light text-warning">Guías sobre macronutrientes y su función.</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sed at aspernatur odio ullam labore porro in libero nulla voluptates, cum ducimus blanditiis ipsam quis dolorum itaque distinctio est. Officia.
-                </p>
-                <h4 class="p-1 text-center card bg-light text-warning">La importancia de la hidratación, la fibra, etc.
-                </h4>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, incidunt. Voluptatibus minima at voluptas ipsum, amet dolor dolorum repellat distinctio porro culpa eius ipsa in quae asperiores nam explicabo pariatur.
-                </p>
-
-                <div class="container  ">
-
-
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-md-3 col-lg-2 p-0 bg-dark text-light">
+                <div class="p-3 bg-dark border-bottom border-secondary">
+                    <h5 class="text-warning mb-0"><i class="bi bi-list"></i> Menú Principal</h5>
                 </div>
-
-                · Recursos Descargables:
-                o Planillas de ejercicios básicos para complementar la nutrición.
-                <h5>Funtes de Informacion</h5>
-                <a href="https://www.fda.gov/food/nutrition-facts-label/como-entender-y-utilizar-la-etiqueta-de-informacion-nutricional">¿Cómo leer las etiquetas nutricionales?</a>
-                <a href="https://medlineplus.gov/spanish/ency/patientinstructions/000895.htm">Mitos y verdades sobre las dietas de moda.</a>
-                <a href="https://www.gob.mx/salud/articulos/la-importancia-de-una-buena-hidratacion">La importancia de la hidratación</a>
-                <a href="https://www.mayoclinic.org/es/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/fiber/art-20043983">La importancia de la fibra</a>
+                <nav class="nav flex-column mt-3">
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="index.html">
+                        <i class="bi bi-house-fill me-2"></i> Inicio
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="login.html">
+                        <i class="bi bi-people-fill me-2"></i> Usuarios
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary active" href="educacion.html">
+                        <i class="bi bi-basket-fill me-2"></i> Artículos Educativos
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="recetas.html">
+                        <i class="bi bi-graph-up me-2"></i> Banco de Recetas Saludables
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="herramientas.html">
+                        <i class="bi bi-calculator me-2"></i> Módulo de Herramientas
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="ejercisios.html">
+                        <i class="bi bi-person-arms-up me-2"></i> Ejercicios básicos
+                    </a>
+                </nav>
             </div>
-        </div>
-    </div>
 
-    <div>
+            <div id="content" class="col-md-9 col-lg-10 p-4 ms-auto">
+                <button class="btn btn-primary mb-4 d-md-none" type="button">
+                    <i class="bi bi-list"></i> Menú
+                </button>
 
-    </div>
-    <footer class="bg-dark text-light text-center py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5 class="text-warning">NutriApp</h5>
-                    <p>Tu compañero de salud y bienestar.</p>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">Acerca de</a></li>
-                        <li><a href="https://youtu.be/AGM8BMqBcTo?si=z2L7ODLz3AuIJdIL"
-                                class="text-light text-decoration-none">Karla Valdez Lome 3-D</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-center">
-                        <p>Hecho con Bootstrap y Flask</p>
+                <main class="flex-grow-1">
+                    <!-- Hero Section -->
+                    <div class="articles-hero">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <h1 class="display-4 fw-bold text-dark mb-3">
+                                        <i class="bi bi-journal-text text-warning"></i> Artículos Educativos
+                                    </h1>
+                                    <p class="lead mb-4 text-dark">
+                                        Aprende sobre nutrición con información confiable y basada en evidencia científica. 
+                                        Tu educación nutricional es el primer paso hacia una vida más saludable.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <span class="feature-badge bg-warning text-dark">
+                                            <i class="bi bi-shield-check me-2"></i>Información Verificada
+                                        </span>
+                                        <span class="feature-badge bg-success text-dark">
+                                            <i class="bi bi-book me-2"></i>Basado en Ciencia
+                                        </span>
+                                        <span class="feature-badge bg-danger text-dark">
+                                            <i class="bi bi-heart me-2"></i>Salud Confiable
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="{{ url_for('static', filename='img/education-hero.png') }}" alt="Artículos Educativos" class="img-fluid" style="max-height: 250px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <!-- Tabla de Contenidos -->
+                        <div class="table-of-contents">
+                            <h3 class="text-dark mb-4"><i class="bi bi-list-check text-warning me-2"></i>Contenido Educativo</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-warning me-2"></i><a href="#etiquetas" class="text-dark text-decoration-none">Cómo leer etiquetas nutricionales</a></li>
+                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-warning me-2"></i><a href="#mitos-dietas" class="text-dark text-decoration-none">Mitos y verdades sobre dietas</a></li>
+                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-warning me-2"></i><a href="#macronutrientes" class="text-dark text-decoration-none">Guía de macronutrientes</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-warning me-2"></i><a href="#hidratacion" class="text-dark text-decoration-none">Importancia de la hidratación</a></li>
+                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-warning me-2"></i><a href="#fibra" class="text-dark text-decoration-none">Beneficios de la fibra</a></li>
+                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-warning me-2"></i><a href="#vitaminas" class="text-dark text-decoration-none">Vitaminas y minerales</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artículo 1: Etiquetas Nutricionales -->
+                        <div class="row mb-5" id="etiquetas">
+                            <div class="col-12">
+                                <div class="article-card">
+                                    <div class="card-body p-4">
+                                        <div class="article-category">Educación Básica</div>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-tag article-icon me-3"></i>
+                                                    <div>
+                                                        <h3 class="text-dark mb-1">Cómo Leer las Etiquetas Nutricionales</h3>
+                                                        <span class="source-badge">Fuente: FDA</span>
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted mb-4">
+                                                    Aprender a interpretar correctamente las etiquetas nutricionales es fundamental 
+                                                    para tomar decisiones alimentarias informadas y saludables.
+                                                </p>
+                                                
+                                                <h5 class="text-dark mb-3">¿Qué debes buscar en una etiqueta?</h5>
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <ul class="list-unstyled">
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Tamaño de porción:</strong> Base de todos los valores</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Calorías:</strong> Energía por porción</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Grasas totales:</strong> Incluye saturadas y trans</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <ul class="list-unstyled">
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Sodio:</strong> Menos de 2,300mg diarios</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Azúcares añadidos:</strong> Limitar al mínimo</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Fibra dietética:</strong> Mínimo 25g diarios</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <h5 class="text-dark mb-3">Valores Diarios de Referencia</h5>
+                                                <div class="table-responsive mb-4">
+                                                    <table class="table table-bordered">
+                                                        <thead class="table-warning">
+                                                            <tr>
+                                                                <th>Nutriente</th>
+                                                                <th>Valor Diario</th>
+                                                                <th>Recomendación</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Grasa Saturada</td>
+                                                                <td>20g</td>
+                                                                <td>Menos del 10% de calorías</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sodio</td>
+                                                                <td>2,300mg</td>
+                                                                <td>Máximo recomendado</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Azúcares Añadidos</td>
+                                                                <td>50g</td>
+                                                                <td>Menos del 10% de calorías</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Fibra Dietética</td>
+                                                                <td>28g</td>
+                                                                <td>Mínimo recomendado</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="alert alert-info">
+                                                    <i class="bi bi-lightbulb me-2"></i>
+                                                    <strong>Consejo:</strong> Compara productos similares y elige aquellos con menos 
+                                                    sodio, azúcares añadidos y grasas saturadas, y más fibra dietética.
+                                                </div>
+
+                                                <a href="https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label" 
+                                                   target="_blank" 
+                                                   class="read-more-btn">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Leer Guía Completa FDA
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-4 text-center">
+                                                <img src="{{ url_for('static', filename='img/etiquetas-nutricionales.jpg') }}" 
+                                                     alt="Etiquetas Nutricionales" 
+                                                     class="img-fluid rounded-3 mb-3">
+                                                <div class="small text-muted">
+                                                    Ejemplo de etiqueta nutricional estándar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artículo 2: Mitos sobre Dietas -->
+                        <div class="row mb-5" id="mitos-dietas">
+                            <div class="col-12">
+                                <div class="article-card">
+                                    <div class="card-body p-4">
+                                        <div class="article-category">Dietas</div>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-question-circle article-icon me-3"></i>
+                                                    <div>
+                                                        <h3 class="text-dark mb-1">Mitos y Verdades sobre las Dietas de Moda</h3>
+                                                        <span class="source-badge">Fuente: OMS / Harvard Health</span>
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted mb-4">
+                                                    Desmitificamos las dietas populares y te ayudamos a distinguir entre 
+                                                    información científica y marketing engañoso.
+                                                </p>
+
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-4">
+                                                        <h5 class="text-danger mb-3"><i class="bi bi-x-circle me-2"></i>Mitos Comunes</h5>
+                                                        <div class="card border-danger mb-3">
+                                                            <div class="card-body">
+                                                                <h6 class="text-danger">"Los carbohidratos engordan"</h6>
+                                                                <p class="small text-muted mb-0">
+                                                                    <strong>Realidad:</strong> Los carbohidratos complejos son esenciales para la energía. 
+                                                                    El exceso de calorías totales causa aumento de peso.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card border-danger mb-3">
+                                                            <div class="card-body">
+                                                                <h6 class="text-danger">"Las dietas detox limpian el cuerpo"</h6>
+                                                                <p class="small text-muted mb-0">
+                                                                    <strong>Realidad:</strong> El hígado y riñones desintoxican naturalmente. 
+                                                                    No hay evidencia científica sobre dietas "detox".
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card border-danger">
+                                                            <div class="card-body">
+                                                                <h6 class="text-danger">"Saltarse comidas ayuda a perder peso"</h6>
+                                                                <p class="small text-muted mb-0">
+                                                                    <strong>Realidad:</strong> Puede ralentizar el metabolismo y llevar a 
+                                                                    comer en exceso posteriormente.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-4">
+                                                        <h5 class="text-success mb-3"><i class="bi bi-check-circle me-2"></i>Verdades Científicas</h5>
+                                                        <div class="card border-success mb-3">
+                                                            <div class="card-body">
+                                                                <h6 class="text-success">El balance calórico es clave</h6>
+                                                                <p class="small text-muted mb-0">
+                                                                    Perder peso requiere un déficit calórico sostenido, 
+                                                                    no eliminar grupos alimenticios.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card border-success mb-3">
+                                                            <div class="card-body">
+                                                                <h6 class="text-success">La proteína ayuda a la saciedad</h6>
+                                                                <p class="small text-muted mb-0">
+                                                                    Dietas con adecuada proteína ayudan a mantener masa 
+                                                                    muscular y controlar el apetito.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card border-success">
+                                                            <div class="card-body">
+                                                                <h6 class="text-success">La consistencia es fundamental</h6>
+                                                                <p class="small text-muted mb-0">
+                                                                    Pequeños cambios sostenibles son más efectivos que 
+                                                                    dietas extremas temporales.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="alert alert-warning">
+                                                    <i class="bi bi-exclamation-triangle me-2"></i>
+                                                    <strong>Precaución:</strong> Las dietas muy restrictivas pueden causar deficiencias 
+                                                    nutricionales y efecto rebote. Consulta siempre con un profesional.
+                                                </div>
+
+                                                <a href="https://www.hsph.harvard.edu/nutritionsource/healthy-weight/diet-reviews/" 
+                                                   target="_blank" 
+                                                   class="read-more-btn me-3">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Análisis Científico de Dietas
+                                                </a>
+                                                <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" 
+                                                   target="_blank" 
+                                                   class="read-more-btn">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Guía OMS Alimentación Saludable
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-4 text-center">
+                                                <img src="{{ url_for('static', filename='img/mitos-dietas.jpg') }}" 
+                                                     alt="Mitos sobre Dietas" 
+                                                     class="img-fluid rounded-3 mb-3">
+                                                <div class="small text-muted">
+                                                    La ciencia vs los mitos nutricionales
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artículo 3: Macronutrientes -->
+                        <div class="row mb-5" id="macronutrientes">
+                            <div class="col-12">
+                                <div class="article-card">
+                                    <div class="card-body p-4">
+                                        <div class="article-category">Nutrición Básica</div>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-pie-chart article-icon me-3"></i>
+                                                    <div>
+                                                        <h3 class="text-dark mb-1">Guía Completa sobre Macronutrientes y sus Funciones</h3>
+                                                        <span class="source-badge">Fuente: NIH / MedlinePlus</span>
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted mb-4">
+                                                    Los macronutrientes son los componentes principales de nuestra dieta 
+                                                    que proporcionan energía y cumplen funciones esenciales en el organismo.
+                                                </p>
+
+                                                <div class="row text-center mb-4">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="bg-success bg-opacity-10 rounded-3 p-3">
+                                                            <i class="bi bi-egg-fried text-success" style="font-size: 2rem;"></i>
+                                                            <h5 class="text-success mt-2">Proteínas</h5>
+                                                            <p class="small text-muted mb-2">4 cal/g</p>
+                                                            <p class="small">Construcción y reparación de tejidos</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="bg-warning bg-opacity-10 rounded-3 p-3">
+                                                            <i class="bi bi-bread-slice text-warning" style="font-size: 2rem;"></i>
+                                                            <h5 class="text-warning mt-2">Carbohidratos</h5>
+                                                            <p class="small text-muted mb-2">4 cal/g</p>
+                                                            <p class="small">Energía inmediata y combustible cerebral</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="bg-danger bg-opacity-10 rounded-3 p-3">
+                                                            <i class="bi bi-droplet text-danger" style="font-size: 2rem;"></i>
+                                                            <h5 class="text-danger mt-2">Grasas</h5>
+                                                            <p class="small text-muted mb-2">9 cal/g</p>
+                                                            <p class="small">Energía de reserva y absorción de vitaminas</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h5 class="text-dark mb-3">Distribución Recomendada</h5>
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <div class="card border-0 bg-light">
+                                                            <div class="card-body">
+                                                                <h6 class="text-dark">Adulto Promedio</h6>
+                                                                <ul class="list-unstyled small">
+                                                                    <li class="mb-1"><strong>Proteínas:</strong> 10-35% del total calórico</li>
+                                                                    <li class="mb-1"><strong>Carbohidratos:</strong> 45-65% del total calórico</li>
+                                                                    <li class="mb-1"><strong>Grasas:</strong> 20-35% del total calórico</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="card border-0 bg-light">
+                                                            <div class="card-body">
+                                                                <h6 class="text-dark">Atletas</h6>
+                                                                <ul class="list-unstyled small">
+                                                                    <li class="mb-1"><strong>Proteínas:</strong> 15-25% del total calórico</li>
+                                                                    <li class="mb-1"><strong>Carbohidratos:</strong> 50-65% del total calórico</li>
+                                                                    <li class="mb-1"><strong>Grasas:</strong> 20-30% del total calórico</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h5 class="text-dark mb-3">Funciones Específicas</h5>
+                                                <div class="table-responsive mb-4">
+                                                    <table class="table table-bordered">
+                                                        <thead class="table-info">
+                                                            <tr>
+                                                                <th>Macronutriente</th>
+                                                                <th>Funciones Principales</th>
+                                                                <th>Fuentes Saludables</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><strong>Proteínas</strong></td>
+                                                                <td>Reparación tisular, enzimas, hormonas, anticuerpos</td>
+                                                                <td>Pollo, pescado, legumbres, huevos, lácteos</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>Carbohidratos</strong></td>
+                                                                <td>Energía cerebral, combustible muscular, fibra</td>
+                                                                <td>Granos enteros, frutas, verduras, legumbres</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>Grasas</strong></td>
+                                                                <td>Reserva energética, aislamiento, absorción vitaminas</td>
+                                                                <td>Aguacate, nueces, aceite oliva, pescados grasos</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <a href="https://medlineplus.gov/spanish/ency/article/002467.htm" 
+                                                   target="_blank" 
+                                                   class="read-more-btn me-3">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Proteínas - MedlinePlus
+                                                </a>
+                                                <a href="https://medlineplus.gov/spanish/ency/article/002469.htm" 
+                                                   target="_blank" 
+                                                   class="read-more-btn me-3">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Carbohidratos - MedlinePlus
+                                                </a>
+                                                <a href="https://medlineplus.gov/spanish/ency/article/002468.htm" 
+                                                   target="_blank" 
+                                                   class="read-more-btn">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Grasas - MedlinePlus
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-4 text-center">
+                                                <img src="{{ url_for('static', filename='img/macronutrientes.jpg') }}" 
+                                                     alt="Macronutrientes" 
+                                                     class="img-fluid rounded-3 mb-3">
+                                                <div class="small text-muted">
+                                                    Balance ideal de macronutrientes
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artículo 4: Hidratación -->
+                        <div class="row mb-5" id="hidratacion">
+                            <div class="col-12">
+                                <div class="article-card">
+                                    <div class="card-body p-4">
+                                        <div class="article-category">Hidratación</div>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-droplet article-icon me-3"></i>
+                                                    <div>
+                                                        <h3 class="text-dark mb-1">La Importancia Fundamental de la Hidratación</h3>
+                                                        <span class="source-badge">Fuente: Mayo Clinic / OMS</span>
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted mb-4">
+                                                    El agua es esencial para la vida y juega un papel crucial en prácticamente 
+                                                    todas las funciones corporales. Una hidratación adecuada es vital para la salud.
+                                                </p>
+
+                                                <h5 class="text-dark mb-3">Funciones del Agua en el Organismo</h5>
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <ul class="list-unstyled">
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Regula temperatura corporal</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Transporta nutrientes y oxígeno</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Lubrica articulaciones</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Protege órganos y tejidos</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <ul class="list-unstyled">
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Elimina desechos corporales</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Facilita la digestión</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Mejora función cognitiva</li>
+                                                            <li class="mb-2"><i class="bi bi-check-circle text-info me-2"></i>Mantiene elasticidad de la piel</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <h5 class="text-dark mb-3">Recomendaciones de Ingesta Diaria</h5>
+                                                <div class="table-responsive mb-4">
+                                                    <table class="table table-bordered">
+                                                        <thead class="table-primary">
+                                                            <tr>
+                                                                <th>Grupo</th>
+                                                                <th>Recomendación Diaria</th>
+                                                                <th>Consideraciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><strong>Hombres Adultos</strong></td>
+                                                                <td>3.7 litros aprox.</td>
+                                                                <td>Incluye agua de alimentos y bebidas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>Mujeres Adultas</strong></td>
+                                                                <td>2.7 litros aprox.</td>
+                                                                <td>Incluye agua de alimentos y bebidas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>Embarazo</strong></td>
+                                                                <td>3.0 litros aprox.</td>
+                                                                <td>Consulta con médico</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>Lactancia</strong></td>
+                                                                <td>3.8 litros aprox.</td>
+                                                                <td>Mayor requerimiento</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <h5 class="text-dark mb-3">Señales de Deshidratación</h5>
+                                                <div class="alert alert-warning mb-4">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li class="mb-1"><i class="bi bi-exclamation-triangle me-2"></i>Sed intensa</li>
+                                                                <li class="mb-1"><i class="bi bi-exclamation-triangle me-2"></i>Boca seca</li>
+                                                                <li class="mb-1"><i class="bi bi-exclamation-triangle me-2"></i>Orina oscura</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li class="mb-1"><i class="bi bi-exclamation-triangle me-2"></i>Fatiga</li>
+                                                                <li class="mb-1"><i class="bi bi-exclamation-triangle me-2"></i>Mareos</li>
+                                                                <li class="mb-1"><i class="bi bi-exclamation-triangle me-2"></i>Dolor de cabeza</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="alert alert-info">
+                                                    <i class="bi bi-lightbulb me-2"></i>
+                                                    <strong>Consejo:</strong> Lleva siempre una botella de agua contigo y bebe pequeños 
+                                                    sorbos regularmente, no esperes a tener sed.
+                                                </div>
+
+                                                <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256" 
+                                                   target="_blank" 
+                                                   class="read-more-btn me-3">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Guía de Hidratación - Mayo Clinic
+                                                </a>
+                                                <a href="https://www.who.int/water_sanitation_health/dwq/nutrientschap3.pdf" 
+                                                   target="_blank" 
+                                                   class="read-more-btn">
+                                                    <i class="bi bi-box-arrow-up-right me-2"></i>Recomendaciones OMS - Agua Potable
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-4 text-center">
+                                                <img src="{{ url_for('static', filename='img/hidratacion.jpg') }}" 
+                                                     alt="Importancia de la Hidratación" 
+                                                     class="img-fluid rounded-3 mb-3">
+                                                <div class="small text-muted">
+                                                    El agua es vida - mantente hidratado
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artículo 5: Fibra -->
+                        <div class="row" id="fibra">
+                            <div class="col-12">
+                                <div class="article-card">
+                                    <div class="card-body p-4">
+                                        <div class="article-category">Salud Digestiva</div>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-tree article-icon me-3"></i>
+                                                    <div>
+                                                        <h3 class="text-dark mb-1">Fibra Dietética: Beneficios y Fuentes</h3>
+                                                        <span class="source-badge">Fuente: Harvard T.H. Chan / Academy of Nutrition</span>
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted mb-4">
+                                                    La fibra dietética es esencial para la salud digestiva y ofrece numerosos 
+                                                    beneficios que van más allá del sistema gastrointestinal.
+                                                </p>
+
+                                                <h5 class="text-dark mb-3">Tipos de Fibra y sus Beneficios</h5>
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <div class="card border-success mb-3">
+                                                            <div class="card-header bg-success text-white">
+                                                                <strong>Fibra Soluble</strong>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="small text-muted mb-2">Se disuelve en agua formando un gel</p>
+                                                                <ul class="list-unstyled small mb-0">
+                                                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Reduce colesterol LDL</li>
+                                                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Regula azúcar en sangre</li>
+                                                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Promueve saciedad</li>
+                                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card border-warning mb-3">
+                                            <div class="card-header bg-warning text-dark">
+                                                <strong>Fibra Insoluble</strong>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="small text-muted mb-2">No se disuelve en agua</p>
+                                                <ul class="list-unstyled small mb-0">
+                                                    <li class="mb-1"><i class="bi bi-check text-warning me-2"></i>Previene estreñimiento</li>
+                                                    <li class="mb-1"><i class="bi bi-check text-warning me-2"></i>Promueve regularidad intestinal</li>
+                                                    <li class="mb-1"><i class="bi bi-check text-warning me-2"></i>Ayuda a mantener pH intestinal</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 class="text-dark mb-3">Ingesta Recomendada</h5>
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <div class="card border-0 bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="text-dark">Hombres</h6>
+                                                <div class="display-6 text-success">38g</div>
+                                                <p class="small text-muted mb-0">por día (hasta 50 años)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card border-0 bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="text-dark">Mujeres</h6>
+                                                <div class="display-6 text-success">25g</div>
+                                                <p class="small text-muted mb-0">por día (hasta 50 años)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 class="text-dark mb-3">Fuentes Excelentes de Fibra</h5>
+                                <div class="table-responsive mb-4">
+                                    <table class="table table-bordered">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th>Alimento</th>
+                                                <th>Fibra (por 100g)</th>
+                                                <th>Tipo de Fibra</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Semillas de Chía</strong></td>
+                                                <td>34.4g</td>
+                                                <td>Soluble e Insoluble</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Lentejas</strong></td>
+                                                <td>10.7g</td>
+                                                <td>Mayormente Soluble</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Almendras</strong></td>
+                                                <td>12.5g</td>
+                                                <td>Mayormente Insoluble</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Brócoli</strong></td>
+                                                <td>2.6g</td>
+                                                <td>Ambos tipos</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Avena</strong></td>
+                                                <td>10.6g</td>
+                                                <td>Mayormente Soluble</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="alert alert-success">
+                                    <i class="bi bi-lightbulb me-2"></i>
+                                    <strong>Consejo:</strong> Aumenta gradualmente tu ingesta de fibra y bebe mucha agua 
+                                    para evitar molestias digestivas.
+                                </div>
+
+                                <a href="https://www.hsph.harvard.edu/nutritionsource/carbohydrates/fiber/" 
+                                   target="_blank" 
+                                   class="read-more-btn me-3">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>Fibra - Harvard Nutrition
+                                </a>
+                                <a href="https://www.eatright.org/food/vitamins-and-supplements/nutrient-rich-foods/fiber" 
+                                   target="_blank" 
+                                   class="read-more-btn">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>Academy of Nutrition and Dietetics
+                                </a>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <img src="{{ url_for('static', filename='img/fibra-dietetica.jpg') }}" 
+                                     alt="Fibra Dietética" 
+                                     class="img-fluid rounded-3 mb-3">
+                                <div class="small text-muted">
+                                    Alimentos ricos en fibra para una digestión saludable
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr class="my-4 bg-secondary">
-            <p class="m-0">© 2025 NutriApp. Todos los derechos reservados.</p>
         </div>
-    </footer>
-
-
-</body>
-
-</html>
+    </div>
+</main>
