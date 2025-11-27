@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, flash
 import requests
 
 app = Flask(__name__)
@@ -7,15 +7,20 @@ app.secret_key = 'contaseña'
 API_KEY = "3f9hknPFUPlm5kFjIJ2d75AfXmlUyU5E7M1Ktd9a"
 API_URL = "https://api.nal.usda.gov/fdc/v1/"
 
-usuarios = {}
+USUARIOS_REGISTRADOS = {
+    'usuario@ejemplo.com': {
+        'password': 'contraseña',
+        'nombre': 'Usuario Ejemplo',
+    }
+}
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/iniciode')
+@app.route('/login')
 def inicio_de_sesion():
-    return render_template('iniciode.html')
+    return render_template('login.html')
 
 @app.route('/registro')
 def registro():
@@ -25,20 +30,25 @@ def registro():
 def education():
     return render_template('educacion.html')
 
-@app.route('/calculadora.html')
+@app.route('/herramientas.html')
 def herramientas():
-    return render_template('plantilla.html')
+    return render_template('herramientas.html')
 
-@app.route('/plantilla')
-def plantilla():
-    return render_template('plantilla.html')
 
-@app.route('/calculadora', methods=['GET', 'POST'])
+
+@app.route('/herramientas', methods=['GET', 'POST'])
 def calculadora():
-    resultados = {}
+    resultados = {
+
+    }
+    datos_usuario = None
+    
+    if session.get('user'):
+        usuario_correo = session.get('user')
+        if usuario_correo in USUARIOS_REGISTRADOS:
+            datos_usuario = USUARIOS_REGISTRADOS[usuario_correo]
     
     if request.method == 'POST':
-
         if 'calcular_imc' in request.form:
             try:
                 peso = float(request.form.get('imc_peso', 0))
@@ -48,7 +58,6 @@ def calculadora():
                     altura_m = altura_cm / 100
                     imc = peso / (altura_m * altura_m)
                     
-
                     if imc < 18.5:
                         clasificacion = 'Bajo peso'
                     elif imc < 25:
@@ -68,9 +77,6 @@ def calculadora():
                     }
             except ValueError:
                 resultados['imc_error'] = 'Por favor ingresa valores válidos'
-        
-
-
 
         elif 'calcular_tmb' in request.form:
             try:
@@ -80,7 +86,6 @@ def calculadora():
                 edad = int(request.form.get('tmb_edad', 0))
                 
                 if peso > 0 and altura_cm > 0 and edad > 0:
-
                     if sexo == 'male':
                         tmb = (10 * peso) + (6.25 * altura_cm) - (5 * edad) + 5
                     else:
@@ -90,7 +95,6 @@ def calculadora():
                     session['tmb_calculada'] = round(tmb)
             except ValueError:
                 resultados['tmb_error'] = 'Por favor ingresa valores válidos'
-
 
         elif 'calcular_gct' in request.form:
             try:
@@ -102,7 +106,6 @@ def calculadora():
                     resultados['gct'] = round(gct)
             except ValueError:
                 resultados['gct_error'] = 'Por favor ingresa una TMB válida'
-        
 
         elif 'calcular_peso_ideal' in request.form:
             try:
@@ -112,13 +115,11 @@ def calculadora():
                 
                 if altura_cm > 0:
                     if metodo == 'devine':
-      
                         if sexo == 'male':
                             peso_ideal = 50 + 2.3 * ((altura_cm / 2.54) - 60)
                         else:
                             peso_ideal = 45.5 + 2.3 * ((altura_cm / 2.54) - 60)
                     else:
-                  
                         if sexo == 'male':
                             peso_ideal = 48 + 2.7 * ((altura_cm / 2.54) - 60)
                         else:
@@ -128,7 +129,6 @@ def calculadora():
             except ValueError:
                 resultados['peso_ideal_error'] = 'Por favor ingresa una altura válida'
         
-        
         elif 'calcular_macros' in request.form:
             try:
                 calorias = float(request.form.get('macro_kcal', 0))
@@ -136,13 +136,10 @@ def calculadora():
                 carbs_pct = float(request.form.get('macro_carbs', 50))
                 
                 if calorias > 0:
-                
                     if prot_pct + carbs_pct > 100:
                         resultados['macro_error'] = 'La suma de proteínas y carbohidratos no puede exceder 100%'
                     else:
                         fat_pct = 100 - prot_pct - carbs_pct
-                    
-
                         prot_g = (calorias * (prot_pct / 100)) / 4
                         carbs_g = (calorias * (carbs_pct / 100)) / 4
                         fat_g = (calorias * (fat_pct / 100)) / 9
@@ -158,7 +155,6 @@ def calculadora():
             except ValueError:
                 resultados['macro_error'] = 'Por favor ingresa valores válidos'
         
-        
         elif 'calcular_receta' in request.form:
             try:
                 total_calorias = 0
@@ -166,7 +162,6 @@ def calculadora():
                 total_grasas = 0
                 total_carbohidratos = 0
                 
-               
                 i = 0
                 while True:
                     calorias = request.form.get(f'receta_calorias_{i}')
@@ -183,7 +178,7 @@ def calculadora():
                     
                     i += 1
                 
-                if i > 0:  
+                if i > 0:
                     resultados['receta'] = {
                         'calorias': round(total_calorias, 1),
                         'proteinas': round(total_proteinas, 1),
@@ -196,11 +191,10 @@ def calculadora():
             except Exception as e:
                 resultados['receta_error'] = 'Error al calcular la receta'
     
-    return render_template('calculadora.html', resultados=resultados)
+    return render_template('calculadora.html', resultados=resultados, datos_usuario=datos_usuario)
 
 @app.route('/usar_tmb')
 def usar_tmb():
-    """Ruta para usar la TMB calculada anteriormente"""
     tmb_calculada = session.get('tmb_calculada')
     if tmb_calculada:
         return redirect(url_for('calculadora', tmb_manual=tmb_calculada))
@@ -208,7 +202,6 @@ def usar_tmb():
 
 @app.route('/auto_macros')
 def auto_macros():
-    """Ruta para valores automáticos de macros"""
     return redirect(url_for('calculadora', macro_prot=25, macro_carbs=50))
 
 @app.route('/login', methods=['POST'])
@@ -216,20 +209,16 @@ def login():
     username = request.form['username']
     password = request.form['password']
 
-    if username and password:
+    if username in USUARIOS_REGISTRADOS and USUARIOS_REGISTRADOS[username]['password'] == password:
         session['user'] = username
         return redirect(url_for('index'))
 
     return redirect(url_for('inicio_de_sesion'))
 
-@app.route('/logout')
-def logout():
+@app.route('/registro')
+def registro():
     session.pop('user', None)
     return redirect(url_for('index'))
-
-@app.route("/")
-def recetas():
-    return render_template("recetas.html")
 
 @app.route("/buscar", methods=["POST"])
 def buscar_alimento():
@@ -257,7 +246,6 @@ def buscar_alimento():
     
     return redirect("/")
 
-
 @app.route("/api/buscar", methods=["POST"])
 def api_buscar():
     nombre_comida = request.json.get("comida")
@@ -280,11 +268,7 @@ def api_buscar():
     
     return jsonify({"error": "Error al consultar la API"}), 500
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
-
-
-
-
-if __name__ == '__main__':
     app.run(debug=True, port=5000)
+    
