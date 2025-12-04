@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar secion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/NutriAppp/../static/css/styles.css">
+</head>
+
+<body>
+  <div class="fondo_registro row justify-content-center align-items-center min-vh-100 bg-secondary">
+<body class="fondo_registro">
+  <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="row w-100 justify-content-center">
+
+      <div class="col-12 text-center mb-4">
+        <h1 class="text-warning fw-bold display-4">
+          <i class="bi bi-heart-pulse"></i> NutriApp
+        </h1>
+        <p class="text-dark lead">inicio de secion</p>
+      </div>
+
+
+      <div class="col-lg-6 col-md-8">
+        <div class="card shadow-lg border-0">
+          <div class="card-header bg-dark text-light py-3">
+            <h2 class="fw-bold mb-0 text-center text-warning">
+              <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
+            </h2>
+          </div>
+          <div class="card-body p-4">
+            <form id="loginForm" method="post">
+       
+              <div class="mb-3">
+                <label for="username" class="form-label fw-medium text-dark">
+                  <i class="bi bi-person me-2"></i>Usuario o Correo Electrónico
+                </label>
+                <input type="text" class="form-control" id="username" name="username" 
+                       placeholder="Ingresa tu usuario o email" required>
+              </div>
+
+         
+              <div class="mb-3">
+                <label for="password" class="form-label fw-medium text-dark">
+                  <i class="bi bi-lock me-2"></i>Contraseña
+                </label>
+                <input type="password" class="form-control" id="password" name="password" 
+                       placeholder="Ingresa tu contraseña" required minlength="8">
+                <div class="form-text text-muted">
+                  <i class="bi bi-info-circle me-1"></i>
+                  La contraseña debe tener al menos 8 caracteres
+                </div>
+              </div>
+
+          
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label text-dark" for="rememberMe">
+                  Recordar mi sesión
+                </label>
+              </div>
+
+          
+              <div class="d-grid gap-2 d-md-flex justify-content-md-between mb-3">
+                <a href="index.html" class="btn btn-outline-secondary btn-lg">
+                  <i class="bi bi-arrow-left me-2"></i>Volver
+                </a>
+                <button type="submit" href="index.html" class="btn btn-warning btn-lg flex-fill">
+                  <i class="bi bi-box-arrow-in-right me-2"></i>Continuar
+                </button>
+              </div>
+
+          
+              <div class="text-center">
+                <a href="registro.html" class="btn btn-outline-dark btn-sm me-2">
+                  <i class="bi bi-person-plus me-1"></i>Registrate
+                </a>
+                <a href="recuperar_contraseña.html" class="btn btn-outline-success btn-sm">
+                  <i class="bi bi-key me-1"></i>¿Olvidaste tu contraseña?
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="mt-3 text-center">
+          <div class="alert alert-info d-none" id="passwordHelp">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            <strong>Requisitos de contraseña:</strong>
+            <ul class="mb-0 mt-1">
+              <li>Mínimo 8 caracteres</li>
+              <li>Debe coincidir con la contraseña registrada</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

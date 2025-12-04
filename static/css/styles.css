@@ -71,8 +71,8 @@
 }
 
 .btn-success:hover {
-    background-color: #a0d8c2 !important;
-    border-color: #a0d8c2 !important;
+    background-color: #146935 !important;
+    border-color: #146935 !important;
 }
 
 .btn-danger {
@@ -87,20 +87,20 @@
 }
 
 .btn-warning {
-    background-color: var(--warning) !important;
-    border-color: var(--warning) !important;
-    color: var(--text-dark) !important;
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    color: var(--text-light) !important;
 }
 
 .btn-warning:hover {
-    background-color: #f49fb1 !important;
-    border-color: #f49fb1 !important;
+    background-color: #943449 !important;
+    border-color: 943449 !important;
 }
 
 .btn-dark {
     background-color: var(--dark) !important;
     border-color: var(--dark) !important;
-    color: white !important;
+    color: rgb(42, 66, 49) !important;
 }
 
 .btn-dark:hover {

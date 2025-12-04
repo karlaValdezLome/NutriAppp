@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - NutriApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/NutriAppp/../static/css/styles.css">
+</head>
+
+<body class="bg-light">
+    <header class="bg-dark text-light py-3 shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-warning  fw-bold m-0" href="index.html"><i class="bi bi-heart-pulse"></i> NutriApp</h1>
+            <nav class="d-flex flex-wrap align-items-center">
+                <a href="acerca.html" class="text-light px-3 text-decoration-none">Acerca de</a>
+                <a href="calculadora.html" class="text-light px-3 text-decoration-none">Funciones</a>
+                <a href="educacion.html" class="text-light px-3 text-decoration-none">Artículos</a>
+                <a href="perfil_del_usuario.html" class="text-light px-3 text-decoration-none active">Mi Perfil</a>
+                <a href="login.html" class="btn btn-warning ms-3">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row">
+            
+            <div class="col-lg-4 mb-4">
+          
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body text-center p-4">
+                        <div class="position-relative d-inline-block mb-3">
+                            <img src="/NutriAppp/VLK_08_11_2025/static/img/foto_de_perfil.png" 
+                                 class="rounded-circle border border-4 border-warning" 
+                                 alt="Foto de perfil" 
+                                 width="150" height="150"
+                                 id="profilePicture">
+                            <button class="btn btn-warning btn-sm position-absolute bottom-0 end-0 rounded-circle"
+                                    style="width: 40px; height: 40px;"
+                                    data-bs-toggle="modal" data-bs-target="#photoModal">
+                                <i class="bi bi-camera"></i>
+                            </button>
+                        </div>
+                        <h3 class="mb-1" id="userName">Juan Pérez</h3>
+                        <p class="text-muted mb-3" id="userEmail">juan@correo.com</p>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                            <i class="bi bi-pencil me-2"></i>Editar Perfil
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                        <h5 class="mb-4 text-dark"><i class="bi bi-graph-up text-warning me-2"></i>Mi Progreso</h5>
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="h4 text-warning mb-1">12</div>
+                                <small class="text-muted">Días seguidos</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="h4 text-warning mb-1">85%</div>
+                                <small class="text-muted">Objetivos</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="h4 text-warning mb-1">3.2</div>
+                                <small class="text-muted">Kg perdidos</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="mb-4 text-dark"><i class="bi bi-heart-pulse text-warning me-2"></i>Datos de Salud</h5>
+                        <div class="mb-3">
+                            <strong class="text-dark">Edad:</strong> <span id="userAge">28 años</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="text-dark">Altura:</strong> <span id="userHeight">175 cm</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="text-dark">Peso actual:</strong> <span id="userWeight">72 kg</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="text-dark">IMC:</strong> <span id="userBMI">23.5</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="text-dark">Objetivo:</strong> <span id="userGoal">Mantener peso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-8">
+                
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="mb-0 text-dark"><i class="bi bi-journal-text text-warning me-2"></i>Mis Planes Nutricionales</h4>
+                            <button class="btn btn-outline-warning">
+                                <i class="bi bi-plus-circle me-2"></i>Nuevo Plan
+                            </button>
+                        </div>
+
+                        
+                        <div class="card border-warning mb-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <h5 class="text-warning mb-1">Plan Activo</h5>
+                                        <p class="text-muted mb-0">Plan de mantenimiento - 1800 calorías/día</p>
+                                    </div>
+                                    <span class="badge bg-success">Activo</span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="text-dark">Progreso semanal</span>
+                                        <span class="text-dark">75%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-4">
+                                        <strong class="text-success">45%</strong>
+                                        <p class="small text-muted mb-0">Carbohidratos</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <strong class="text-warning">30%</strong>
+                                        <p class="small text-muted mb-0">Proteínas</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <strong class="text-danger">25%</strong>
+                                        <p class="small text-muted mb-0">Grasas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <h6 class="mb-3 text-dark">Planes Anteriores</h6>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1 text-dark">Plan de Definición</h6>
+                                        <p class="text-muted mb-0">1500 calorías/día - Completado</p>
+                                    </div>
+                                    <span class="badge bg-secondary">Finalizado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1 text-dark">Plan Volumen</h6>
+                                        <p class="text-muted mb-0">2200 calorías/día - Completado</p>
+                                    </div>
+                                    <span class="badge bg-secondary">Finalizado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1 text-dark">Plan Inicial</h6>
+                                        <p class="text-muted mb-0">2000 calorías/día - Completado</p>
+                                    </div>
+                                    <span class="badge bg-secondary">Finalizado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="mb-4 text-dark"><i class="bi bi-basket text-warning me-2"></i>Mis Preferencias</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <strong class="text-dark">Alergias:</strong>
+                                <p class="text-muted mb-0" id="userAllergies">Ninguna registrada</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong class="text-dark">Intolerancias:</strong>
+                                <p class="text-muted mb-0" id="userIntolerances">Lactosa</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong class="text-dark">Dieta preferida:</strong>
+                                <p class="text-muted mb-0" id="userDiet">Mediterránea</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong class="text-dark">Nivel actividad:</strong>
+                                <p class="text-muted mb-0" id="userActivity">Moderado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h5 class="mb-4 text-dark"><i class="bi bi-bell text-warning me-2"></i>Configuración</h5>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="notifications" checked>
+                            <label class="form-check-label text-dark" for="notifications">
+                                Notificaciones de recordatorio
+                            </label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="emailUpdates" checked>
+                            <label class="form-check-label text-dark" for="emailUpdates">
+                                Actualizaciones por correo
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="progressReports">
+                            <label class="form-check-label text-dark" for="progressReports">
+                                Reportes de progreso semanal
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="photoModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambiar Foto de Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="border border-dashed rounded p-4 mb-3">
+                        <i class="bi bi-cloud-arrow-up text-warning display-6"></i>
+                        <p class="mt-2 mb-0">Haz clic para subir una foto</p>
+                        <small class="text-muted">PNG, JPG hasta 5MB</small>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning">Guardar Foto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="editProfileModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="editName" value="Juan">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editLastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="editLastName" value="Pérez">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editEmail" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="editEmail" value="juan@correo.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editWeight" class="form-label">Peso Actual (kg)</label>
+                        <input type="number" class="form-control" id="editWeight" value="72">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editGoal" class="form-label">Objetivo</label>
+                        <select class="form-select" id="editGoal">
+                            <option value="bajar_peso">Bajar de peso</option>
+                            <option value="aumentar_musculo" selected>Aumentar masa muscular</option>
+                            <option value="mantener_peso">Mantener peso</option>
+                            <option value="mejorar_salud">Mejorar salud general</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-warning">NutriApp</h5>
+                    <p>Tu compañero de salud y bienestar.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="acerca.html" class="text-light text-decoration-none">Acerca de</a></li>
+                        <li><a href="https://youtu.be/AGM8BMqBcTo?si=z2L7ODLz3AuIJdIL" class="text-light text-decoration-none">Karla Valdez lome 3-D</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter" style="font-size: 1.5rem;"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="m-0">© 2023 NutriApp. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
